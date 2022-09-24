@@ -69,7 +69,7 @@ const DoctorShow = ({ updateDoctor, deleteDoctor }) => {
           </Button>
           <br />
           <h1>Our elite team of Doctors.</h1>
-          <UserList users={doctorUsers} />
+          {/* <UserList users={doctorUsers} /> */}
         </>
       }
     </>
