@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from 'react-bootstrap';
 
-const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, updateDoctor, setEdit }) => {
+const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, img, updateDoctor, setEdit }) => {
   const [doctor, setDoctor] = useState({ name: '', position: '', npi: '' })
 
   useEffect( () => {
     if (id) {
-      setDoctor({ name, position, npi })
+      setDoctor({ name, position, npi, img })
     }
   }, [])
 
@@ -19,7 +19,7 @@ const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, updateDoctor, 
       addDoctor(doctor)
       setAdd(false)
     }
-    setDoctor({ name: '', position: '', npi: '' })
+    setDoctor({ name: '', position: '', npi: '', img:'' })
   }
 
   return (
@@ -31,8 +31,8 @@ const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, updateDoctor, 
             name='name'
             value={doctor.name}
             onChange={(e) => setDoctor({ ...doctor, name: e.target.value })}
-            required
             placeholder="name"
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -41,20 +41,21 @@ const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, updateDoctor, 
             name='position'
             value={doctor.position}
             onChange={(e) => setDoctor({ ...doctor, position: e.target.value })}
-            required
             as="textarea" 
             rows={3}
-          />
-        </Form.Group>
-        {/* <Form.Group className="mb-3">
-          <Form.Label>Course type</Form.Label>
-          <Form.Control 
-            name='ctype'
-            value={course.ctype}
-            onChange={(e) => setCourse({ ...course, ctype: e.target.value })}
             required
           />
-        </Form.Group> */}
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Doctor Image</Form.Label>
+          <Form.Control 
+            name='img'
+            value={doctor.img}
+            onChange={(e) => setDoctor({...doctor, img: e.target.value })}
+            placeholder="image" 
+            required
+          />
+        </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>NPI</Form.Label>
           <Form.Select
