@@ -31,9 +31,6 @@ class Api::DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
     render json: { message: 'doctor deleted' }
-    or
-    Doctor.find(params[:id]).destroy
-    render json: { message: 'doctor deleted' }
   end
 
   private

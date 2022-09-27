@@ -6,9 +6,9 @@ const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, img, updateDoc
 
   useEffect( () => {
     if (id) {
-      setDoctor({ name, position, npi, img })
+      setDoctor({ name, position, npi })
     }
-  }, [])
+  }, [id, name, position, npi])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const DoctorForm = ({ addDoctor, setAdd, id, name, position, npi, img, updateDoc
       addDoctor(doctor)
       setAdd(false)
     }
-    setDoctor({ name: '', position: '', npi: '', img:'' })
+    setDoctor({ name: '', position: '', npi: '' })
   }
 
   return (
