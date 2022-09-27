@@ -8,13 +8,14 @@ const DoctorList = ({ doctors }) => (
         <Col key={c.id}>
           <Card style={{ width: '10rem' }}>
             <Card.Body>
-              <Card.Title>{c.title}</Card.Title>
+              <Card.Title>{c.name}</Card.Title>
               <Card.Text>
-                {c.desc}
-                {c.ctype}
+                {c.position}
+                <br/>
+                {c.npi}
               </Card.Text>
               <Link to={`/doctors/${c.id}`}>
-                <Button>Show</Button>
+                <Button >Show</Button>
               </Link>
             </Card.Body>
           </Card>
