@@ -1,18 +1,33 @@
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
-
+import { MainHeader, FeatureHeader, BodyText } from "../../styles/HomeStyles";
 const Faqs = () => (
     <Container>
         <Row>
-            <h1 className="text-center">
+            <MainHeader className="text-center">
                 FAQS
-            </h1>
+            </MainHeader>
         </Row>
 
         {/* Accordion */}
         <Row>
+            <style type="text/css">
+                {`
+                    .accordText button {
+                        color: #FFC855;
+                    }
+
+                    .accordText {
+                        color: #FFC855;
+                    }
+
+                `}
+            </style>
             <Col lg='20' md='30' sm='40'>
                 <Accordion defaultActiveKey={0}>
-                    <Accordion.Item eventKey="0">
+                    <Accordion.Item 
+                        eventKey="0"
+                        className="accordText"
+                    >
                         <Accordion.Header>
                             How much does it cost?
                         </Accordion.Header>
@@ -22,7 +37,10 @@ const Faqs = () => (
                             and provide a wide range of access to healthcare.
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="1">
+                    <Accordion.Item 
+                        eventKey="1"
+                        className="accordText"
+                    >
                         <Accordion.Header>
                             What care do you provide?
                         </Accordion.Header>
@@ -33,7 +51,10 @@ const Faqs = () => (
                             correct needed specialist.
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="2">
+                    <Accordion.Item 
+                        eventKey="2"
+                        className="accordText"
+                    >
                         <Accordion.Header>
                             How do I make an Appointment?
                         </Accordion.Header>
@@ -51,13 +72,13 @@ const Faqs = () => (
         </Row>
 
         <Row className="text-center">
-            <h3>
+            <FeatureHeader>
                 Still have a question?
-            </h3>
+            </FeatureHeader>
 
-            <p>
+            <BodyText>
                 Drop us a call
-            </p>
+            </BodyText>
 
             <Col>
                 <Button 
